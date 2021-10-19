@@ -1,0 +1,51 @@
+﻿@model IEnumerable<lab2.Models.persona>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="animate__animated animate__fadeInDown">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-bordered border-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EdadPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionPersona)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombrePersona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EdadPersona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescripcionPersona)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdPersona }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdPersona }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdPersona })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div>
+        @Html.ActionLink("Ir a registro", "Create")
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model lab2.Models.persona
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePersona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EdadPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EdadPersona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionPersona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPersona }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
